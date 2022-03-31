@@ -13,7 +13,6 @@ const PersonDetails = (props) => {
 };
 
 const mapMethodsToProps = (service) => {
-    console.log(service);
     return {
         getData: service.getPerson,
         getImageURL: service.getPersonImage
