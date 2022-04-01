@@ -42,7 +42,7 @@ export default class RandomPlanet extends Component {
         const hasData = !(loading || error);
 
         const errorMessage = error ? <ErrorIndicator /> : null;
-        const spinner = loading ? <Spinner /> : null;
+        const spinner = loading ? <span>please select an item</span> : null;
         const content = hasData ? <PlanetView planet={planet} /> : null;
 
         return (

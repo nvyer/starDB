@@ -6,14 +6,16 @@ import './item-details.css';
 
 class ItemDetails extends Component {
 
-    state = { item: null, image: null };
+    state = { item: null, image: null, };
 
     componentDidMount () {
         this.updateItem();
     }
 
     componentDidUpdate (prevProps) {
-        if (this.props.itemId !== prevProps.itemId) {
+        if (this.props.itemId !== prevProps.itemId ||
+            this.props.getImageURL !== prevProps.getImageURL ||
+            this.props.getData !== prevProps.getData) {
             this.updateItem();
         }
     }
@@ -29,7 +31,7 @@ class ItemDetails extends Component {
     render () {
         const { item, image } = this.state;
 
-        if (!item) return <Spinner />;
+        if (!item) return <span>Please select an item!</span>;
         const { name } = item;
 
         return (
