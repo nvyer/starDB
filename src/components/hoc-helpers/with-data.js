@@ -18,9 +18,9 @@ const withData = (View) => {
 
         update = () => {
             this.setState({ loading: true, error: false });
-            this.props.getData().then((data) => { this.setState({ data, loading: false }); }).catch(err => {
-                this.setState({ error: true });
-            });
+            this.props.getData()
+                .then((data) => { this.setState({ data, loading: false }); })
+                .catch(_ => { this.setState({ error: true }); });
         };
 
         render () {

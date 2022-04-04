@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Spinner from '../spinner';
 import ErrorButton from '../error-button';
-
+// styles
 import './item-details.css';
 
 class ItemDetails extends Component {
