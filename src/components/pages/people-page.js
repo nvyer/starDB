@@ -1,19 +1,17 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { PersonList, PersonDetails } from "../sw-components";
+import { Navigate, useParams, useNavigate, useLocation } from 'react-router-dom';
 import Row from "../row";
 
-export default class PeoplePage extends Component {
-    state = { selectedItem: null };
+const PeoplePage = () => {
+    const navigate = useNavigate();
+    const { id } = useParams();
 
-    onSelectedItem = (selectedItem) => {
-        this.setState({ selectedItem });
-    };
+    return (
+        <Row
+            left={<PersonList onItemSelected={(id) => navigate(`/people/${id}`)} />}
+            right={<PersonDetails itemId={id} />} />
+    );
+};
 
-    render () {
-        const { selectedItem } = this.state;
-
-        return (
-            <Row left={<PersonList onItemSelected={this.onSelectedItem} />} right={<PersonDetails itemId={selectedItem} />} />
-        );
-    }
-}
+export default PeoplePage;
