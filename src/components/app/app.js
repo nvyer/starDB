@@ -13,7 +13,7 @@ import { StarshipDetails } from '../sw-components';
 // styles
 import './app.css';
 // routing
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 export default class App extends Component {
 
